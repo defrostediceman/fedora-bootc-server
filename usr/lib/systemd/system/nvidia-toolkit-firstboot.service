@@ -1,0 +1,12 @@
+[Unit]
+Description=Generate /etc/cdi/nvidia.yaml
+Before=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=nvidia-ctk cdi generate
+RemainAfterExit=yes
+StandardOutput=/etc/cdi/nvidia.yaml
+
+[Install]
+WantedBy=basic.target
