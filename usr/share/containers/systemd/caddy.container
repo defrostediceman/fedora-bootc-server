@@ -1,17 +1,12 @@
 [Unit]
-Description=Run a demo webserver
+Description=Run a webserver
 
 [Container]
-PodmanArgs=--storage-opt=additionalimagestore=/usr/lib/bootc/storage
 Image=docker.io/library/caddy:2.8.4
 ContainerName=caddy
 PublishPort=80:80
-Volume=/usr/share/caddy/config:/etc/caddy/
-Volume=/usr/share/caddy/data:/data
-
-[Service]
-Restart=always
-TimeoutStartSec=900
+Volume=/usr/share/caddy/config:/etc/caddy:Z
+Volume=/usr/share/caddy/data:/data:Z
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

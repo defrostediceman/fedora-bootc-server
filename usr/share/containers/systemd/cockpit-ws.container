@@ -2,13 +2,9 @@
 Description=Cockpit web service container
 
 [Container]
-PodmanArgs=--storage-opt=additionalimagestore=/usr/lib/bootc/storage
 Image=quay.io/cockpit/ws:329.1
 ContainerName=cockpit-ws
 PublishPort=9090:9090
 
-[Service]
-Restart=always
-
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
