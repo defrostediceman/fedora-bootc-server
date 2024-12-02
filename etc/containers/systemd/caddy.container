@@ -5,8 +5,8 @@ Description=Run a webserver
 Image=docker.io/library/caddy:2.8.4
 ContainerName=caddy
 PublishPort=80:80
-Volume=/etc/caddy/config:/etc/caddy:Z
-Volume=/etc/caddy/data:/data:Z
+#Volume=/etc/caddy/config:/etc/caddy:Z
+#Volume=/etc/caddy/data:/data:Z
 
 [Install]
 WantedBy=default.target
