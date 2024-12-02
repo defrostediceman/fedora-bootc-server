@@ -3,8 +3,8 @@ Description=Cockpit web service container
 
 [Container]
 Image=quay.io/cockpit/ws:329.1
+PodmanArgs=--storage-opt=additionalimagestore=/usr/lib/bootc/storage
 ContainerName=cockpit-ws
-Volume=/etc/cockpit/cockpit.conf:/etc/cockpit/cockpit.conf:Z
 PublishPort=9090:9090
 
 [Install]
