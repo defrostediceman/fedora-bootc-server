@@ -4,7 +4,7 @@ Description=Cockpit web service container
 [Container]
 Image=quay.io/cockpit/ws:329.1
 ContainerName=cockpit-ws
-NetworkMode=Host
+PublishPort=9090:9090
 
 [Install]
 WantedBy=default.target
