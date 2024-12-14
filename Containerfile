@@ -17,16 +17,14 @@ RUN dnf install -y cockpit \
                     git \
                     neovim \
                     tmux \
-                    bash-completion \
                     && dnf clean all
 
-RUN dnf -y install nvidia-driver && \
-    dnf install -y nvidia-container-toolkit && \
-    rm /var/log/*.log /var/lib/dnf -rf
+RUN dnf -y install nvidia-driver nvidia-container-toolkit && \
+    rm /var/log/*.log /var/lib/dnf -rf && \
+    dnf clean all
 
 # Required for Logically Bound images, see https://gitlab.com/fedora/bootc/examples/-/tree/main/logically-bound-images/usr/share/containers/systemd
 RUN ln -sr /etc/containers/systemd/*.container /usr/lib/bootc/bound-images.d/
-
 
 RUN systemctl enable fstrim.timer \ 
                         cockpit.socket \
