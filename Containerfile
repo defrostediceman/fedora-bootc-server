@@ -10,8 +10,10 @@ RUN dnf install -y cockpit \
                     cockpit-machines \
                     cockpit-networkmanager \
                     cockpit-files \
-                    qemu \
                     qemu-kvm \
+                    podman \
+                    buildah \
+                    skopeo \
                     firewalld \
                     crun-vm \
                     git \
